@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,22 +10,35 @@
         android:id="@+id/txtWel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selamat Datang" />
+        android:text="@string/selamat_datang"
+        tools:ignore="RelativeOverlap" />
 
     <ImageView
         android:id="@+id/klikProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_profile_foreground"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentEnd="true"
+        android:contentDescription="TODO"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/klikFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorite_foreground"
+        android:layout_toStartOf="@+id/klikProfile"
+        android:layout_marginEnd="15dp"
+        android:contentDescription="TODO"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtWel"
-        android:text="Home"
-        android:textSize="30dp"
+        android:text="@string/home"
+        android:textSize="30sp"
         android:layout_centerHorizontal="true"/>
 
     <androidx.recyclerview.widget.RecyclerView

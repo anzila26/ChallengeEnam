@@ -11,7 +11,7 @@
         android:id="@+id/txtRegist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/txt_register"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"/>
 
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtRegist"
-        android:hint="Masukkan Nama"
+        android:hint="@string/masukkan_nama"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="15dp">
 
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textFieldReg"
-        android:hint="Masukkan Username"
+        android:hint="@string/masukkan_username2"
         android:layout_marginBottom="15dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textFieldRegDua"
-        android:hint="Masukkan Password"
+        android:hint="@string/masukkan_password2"
         app:endIconMode="password_toggle"
         android:layout_marginBottom="15dp">
 
@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textFieldRegTiga"
-        android:hint="Masukkan Ulang Password"
+        android:hint="@string/ulang_password"
         app:endIconMode="password_toggle"
         android:layout_marginBottom="15dp">
 
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textFieldRegEmpat"
         android:layout_marginTop="40dp"
-        android:text="Register"
+        android:text="@string/register"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

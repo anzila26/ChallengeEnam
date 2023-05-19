@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RetrofitClient {
 
-    const val  BASE_URL ="https://64548a2df803f345762b1a74.mockapi.io/"
+    private const val  BASE_URL ="https://64548a2df803f345762b1a74.mockapi.io/"
 
     private  val logging : HttpLoggingInterceptor
         get(){

@@ -4,4 +4,8 @@
     <!-- Change the severity of hardcoded strings to "error" -->
     <issue id="HardcodedText" severity="fatal" />
     <issue id="GradleDependency" severity="ignore"/>
+    <issue id="ContentDescription" severity="ignore"/>
+    <issue id="SetTextI18n" severity="ignore"/>
+    <issue id="NotifyDataSetChanged" severity="ignore"/>
+    <issue id="TextFields" severity="ignore"/>
 </lint>

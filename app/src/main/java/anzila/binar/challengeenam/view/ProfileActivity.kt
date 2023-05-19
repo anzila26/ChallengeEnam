@@ -9,12 +9,15 @@ import android.widget.Toast
 import anzila.binar.challengeenam.R
 import anzila.binar.challengeenam.databinding.ActivityProfileBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("unused", "unused", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate"
+)
 @AndroidEntryPoint
 class ProfileActivity : AppCompatActivity() {
     lateinit var binding : ActivityProfileBinding
@@ -69,7 +72,7 @@ class ProfileActivity : AppCompatActivity() {
             }
 
             sharedPref = getSharedPreferences("dataUser", Context.MODE_PRIVATE)
-            val delete = sharedPref?.edit()
+            val delete = sharedPref.edit()
             delete?.clear()
             delete?.apply()
             startActivity(Intent(this, LoginActivity::class.java))

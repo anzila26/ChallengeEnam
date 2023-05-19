@@ -1,3 +1,7 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "JoinDeclarationAndAssignment"
+)
+
 package anzila.binar.challengeenam.viewmodel
 
 import androidx.lifecycle.MutableLiveData
@@ -10,6 +14,13 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
+@Suppress("unused", "unused", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate"
+)
 @HiltViewModel
 class FilmViewModel @Inject constructor(var api : RestfulApi) : ViewModel() {
     lateinit var liveDataFilm: MutableLiveData<List<ResponseFilmItem>>

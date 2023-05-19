@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +10,7 @@
         android:id="@+id/txtProf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:text="@string/profile"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"/>
 
@@ -21,28 +20,35 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtProf"
         android:layout_marginTop="50dp"
-        android:hint="Masukkan Username" />
+        android:hint="@string/masukkan_uname"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/etNameProf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etUnameProf"
-        android:hint="Masukkan Nama Lengkap" />
+        android:hint="@string/masukkan_nama_lengkap"
+        tools:ignore="TextFields"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/etDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/etNameProf"
-        android:hint="Masukkan Tanggal Lahir" />
+        android:hint="@string/masukkan_tanggal_lahir"
+        tools:ignore="TextFields"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/etAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etDate"
-        android:hint="Masukkan Alamat" />
+        android:hint="@string/masukkan_alamat"
+        tools:ignore="TextFields"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/btnUpdate"
@@ -51,7 +57,7 @@
         android:layout_below="@+id/etAddress"
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:text="Update" />
+        android:text="@string/update" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -59,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnUpdate"
         android:layout_centerHorizontal="true"
-        android:text="Logout" />
+        android:text="@string/logout" />
 
     <TextView
         android:id="@+id/txtUser"
@@ -68,7 +74,7 @@
         android:layout_below="@+id/btnLogout"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Data User"/>
+        android:text="@string/data_user"/>
 
     <TextView
         android:id="@+id/txtUname"
@@ -76,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtUser"
         android:textSize="15sp"
-        android:text="Username"/>
+        android:text="@string/username"/>
 
     <TextView
         android:id="@+id/txtName"
@@ -84,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtUname"
         android:textSize="15sp"
-        android:text="Nama Panjang"/>
+        android:text="@string/nama_panjang"/>
 
     <TextView
         android:id="@+id/txtTtl"
@@ -92,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtName"
         android:textSize="15sp"
-        android:text=" "/>
+        android:text="@string/ttl"/>
 
     <TextView
         android:id="@+id/txtAlamat"
@@ -100,15 +106,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTtl"
         android:textSize="15sp"
-        android:text=" "/>
+        android:text="@string/txt_alamat"/>
 
     <TextView
-        android:id="@+id/txtBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Jangan Lupa Datang Kembali"
+        android:text="@string/datang_kembali"
         android:textSize="20sp"
         android:textStyle="bold" />
 

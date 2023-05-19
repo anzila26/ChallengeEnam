@@ -1,3 +1,7 @@
+@file:Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate"
+)
+
 package anzila.binar.challengeenam.view
 
 import android.content.Context
@@ -10,6 +14,10 @@ import android.widget.Button
 import anzila.binar.challengeenam.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate"
+)
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding

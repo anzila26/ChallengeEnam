@@ -10,6 +10,9 @@ import anzila.binar.challengeenam.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate"
+)
 @AndroidEntryPoint
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding : ActivityRegisterBinding
@@ -30,7 +33,6 @@ class RegisterActivity : AppCompatActivity() {
             val rePass = binding.etRepass.text.toString()
             val rPref = sharedPref.edit()
             rPref.putString("nama", nama)
-            rPref.putString("uname", uname)
             rPref.apply()
 
             if (uname.isNotEmpty() && pass.isNotEmpty() && rePass.isNotEmpty()) {

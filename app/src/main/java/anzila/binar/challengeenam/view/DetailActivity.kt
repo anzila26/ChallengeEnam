@@ -1,5 +1,10 @@
+@file:Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate"
+)
+
 package anzila.binar.challengeenam.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import anzila.binar.challengeenam.databinding.ActivityDetailBinding
@@ -7,9 +12,18 @@ import anzila.binar.challengeenam.model.ResponseFilmItem
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("DEPRECATION", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection"
+)
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
-    lateinit var binding : ActivityDetailBinding
+    private lateinit var binding : ActivityDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,5 +38,11 @@ class DetailActivity : AppCompatActivity() {
         binding.releaseDet.text = detailFilm?.release
         binding.synopDet.text = detailFilm?.synopsis
         Glide.with(this).load(detailFilm?.image).into(binding.imgDet)
+
+        binding.btnFavorite.setOnClickListener {
+            val intent = Intent(this, FavoriteActivity::class.java)
+            intent.putExtra("detailfilm", detailFilm)
+            startActivity(intent)
+        }
     }
 }

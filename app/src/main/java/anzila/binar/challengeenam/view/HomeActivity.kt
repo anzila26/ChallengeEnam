@@ -12,8 +12,14 @@ import anzila.binar.challengeenam.adapter.FilmAdapter
 import anzila.binar.challengeenam.databinding.ActivityHomeBinding
 import anzila.binar.challengeenam.viewmodel.FilmViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.io.Serializable
 
+@Suppress("RedundantSamConstructor", "ReplaceGetOrSet", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate"
+)
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     lateinit var binding : ActivityHomeBinding
@@ -26,7 +32,6 @@ class HomeActivity : AppCompatActivity() {
         sharedPref = getSharedPreferences("dataUser", Context.MODE_PRIVATE)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-      //  showDataFilm()
 
         val getName = sharedPref.getString("nama", "")
         binding.txtWel.text = "Halo, $getName"
@@ -54,36 +59,13 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(inten)
             }
         }
-     //       adapter = adapterfilm
-    //        adapterfilm.onClick={
-     //           var det = it.movieName
-     //           val detail = Intent(context, DetailActivity::class.java)
-     //           detail.putExtra("detailfilm", det)
-     //           startActivity(detail)
-      //      }
-       // }
-    //    adapterfilm = FilmAdapter() {
-     //       val det = it.movieName
-     //       val detail = Intent(applicationContext, DetailActivity::class.java)
-     //       detail.putExtra("detailfilm", det)
-     //       startActivity(detail)
-    //    }
-      //  binding.rvFilm.adapter = adapterfilm
-
 
         binding.klikProfile.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
-    }
 
- //   fun showDataFilm() {
-   //     val viewModelFilm = ViewModelProvider(this).get(FilmViewModel::class.java)
-   //     viewModelFilm.getliveDataFilm().observe(this, Observer {
-    //        if (it != null){
-      //          adapterfilm.setDataFilm(it)
-     //           adapterfilm.notifyDataSetChanged()
-     //       }
-     //   })
-    //    viewModelFilm.callApiFilm()
-   // }
+        binding.klikFavorite.setOnClickListener {
+            startActivity(Intent(this, FavoriteActivity::class.java))
+        }
+    }
 }

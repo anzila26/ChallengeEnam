@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,13 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:src="@drawable/ic_launcher_background"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:contentDescription="TODO"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/titleDet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Judul Film"
+        android:text="@string/judul_film"
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginTop="50dp"
@@ -29,7 +30,7 @@
         android:id="@+id/ratedDet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rated Movie"
+        android:text="@string/rated_movie"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/titleDet"/>
@@ -38,7 +39,7 @@
         android:id="@+id/releaseDet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tanggal Release"
+        android:text="@string/tanggal_release"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/ratedDet"/>
 
@@ -46,8 +47,17 @@
         android:id="@+id/synopDet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Synopsis Film"
+        android:text="@string/synopsis_film"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/releaseDet"/>
+    
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favoritedua_foreground"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
+
 
 </RelativeLayout>

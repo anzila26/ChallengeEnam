@@ -11,7 +11,7 @@
         android:id="@+id/txtLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/txt_login"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"/>
 
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtLogin"
-        android:hint="Masukkan Username"
+        android:hint="@string/masukkan_username"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="15dp">
 
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textField"
-        android:hint="Masukkan Password"
+        android:hint="@string/masukkan_password"
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -54,8 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textFieldDua"
         android:layout_marginTop="10dp"
-        android:layout_alignParentRight="true"
-        android:text="Register"/>
+        android:layout_alignParentEnd="true"
+        android:text="@string/et_register"/>
 
     <Button
         android:id="@+id/btnLogin"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textFieldDua"
         android:layout_marginTop="50dp"
-        android:text="Login"
+        android:text="@string/btn_login"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnLogin"
         android:layout_marginTop="20dp"
-        android:text="Login Using Google"
+        android:text="@string/login_using_google"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

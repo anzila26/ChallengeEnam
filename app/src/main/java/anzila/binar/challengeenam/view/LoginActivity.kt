@@ -1,3 +1,5 @@
+@file:Suppress("FunctionName")
+
 package anzila.binar.challengeenam.view
 
 import android.content.Context
@@ -19,6 +21,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("PropertyName", "unused", "unused", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate"
+)
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     lateinit var binding : ActivityLoginBinding
