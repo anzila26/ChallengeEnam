@@ -1,18 +1,26 @@
-@file:Suppress("unused", "unused", "unused", "unused")
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "RemoveRedundantQualifierName", "RemoveRedundantQualifierName", "unused", "unused", "unused",
+    "unused"
+)
 
 package anzila.binar.challengeenam.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import anzila.binar.challengeenam.databinding.ItemFavoriteBinding
 import anzila.binar.challengeenam.model.ResponseFilmItem
+import anzila.binar.challengeenam.room.FavoriteData
 import com.bumptech.glide.Glide
 
-@Suppress("unused", "unused")
-class FavoriteAdapter : ListAdapter<ResponseFilmItem, FavoriteAdapter.ViewHolder>(DiffCallback()) {
+@Suppress("RemoveEmptyClassBody", "unused", "unused", "unused", "unused")
+class FavoriteAdapter (private var listFavorite : List<FavoriteData>): RecyclerView.Adapter<FavoriteAdapter.ViewHolder>(){
+
+    var onClick : ((FavoriteData)->Unit)? = null
+
+    inner class ViewHolder(val binding: ItemFavoriteBinding): RecyclerView.ViewHolder(binding.root) {
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteAdapter.ViewHolder {
         val view = ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -20,27 +28,23 @@ class FavoriteAdapter : ListAdapter<ResponseFilmItem, FavoriteAdapter.ViewHolder
     }
 
     override fun onBindViewHolder(holder: FavoriteAdapter.ViewHolder, position: Int) {
-        val film = getItem(position)
-        holder.bind(film)
-    }
+        holder.binding.nameFilm.text = listFavorite[position].movieName
+        holder.binding.dateFilm.text = listFavorite[position].release
 
-    inner class ViewHolder(private var binding : ItemFavoriteBinding ): RecyclerView.ViewHolder(binding.root) {
-        fun bind(film: ResponseFilmItem){
-            binding.nameFilm.text = film.movieName
-            binding.dateFilm.text = film.createdAt
-            Glide.with(binding.imgFilm)
-                .load(film.image)
-                .into(binding.imgFilm)
+        val imageUrl = listFavorite[position].image
+        Log.d("FavoriteAdapter", "Image URL: $imageUrl")
+        Glide.with(holder.binding.imgFilm.context).load(listFavorite[position].image).into(holder.binding.imgFilm)
+        holder.binding.detailFilm.setOnClickListener {
+            onClick?.invoke(listFavorite[position])
         }
     }
 
-    private class DiffCallback : DiffUtil.ItemCallback<ResponseFilmItem>() {
-        override fun areItemsTheSame(oldItem: ResponseFilmItem, newItem: ResponseFilmItem): Boolean {
-            return oldItem.id == newItem.id
-        }
+    override fun getItemCount(): Int {
+        return listFavorite.size
+    }
 
-        override fun areContentsTheSame(oldItem: ResponseFilmItem, newItem: ResponseFilmItem): Boolean {
-            return oldItem == newItem
-        }
+    fun setNewData(listFavorite: List<FavoriteData>){
+        this.listFavorite=listFavorite
+        notifyDataSetChanged()
     }
 }

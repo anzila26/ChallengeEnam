@@ -29,8 +29,8 @@ import dagger.hilt.android.AndroidEntryPoint
 )
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
-    lateinit var binding : ActivityLoginBinding
-    lateinit var sharedPref : SharedPreferences
+    lateinit var binding: ActivityLoginBinding
+    lateinit var sharedPref: SharedPreferences
     private lateinit var firebaseAuth: FirebaseAuth
     lateinit var mGoogleSignInClient: GoogleSignInClient
     val Req_Code: Int = 123
@@ -57,29 +57,34 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             val uname = binding.etUnameLog.text.toString()
             val pass = binding.etPassLog.text.toString()
-
-            if (uname.isNotEmpty() && pass.isNotEmpty()) {
-                val rPrefDua = sharedPref.edit()
-                rPrefDua.putString("userName", uname)
-                rPrefDua.apply()
-                firebaseAuth.signInWithEmailAndPassword(uname, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val intent = Intent(this, HomeActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-
-                    }
-                }
-            } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-            }
+            login(uname, pass)
         }
 
         binding.txtNoReg.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
         sharedPref = getSharedPreferences("dataUser", Context.MODE_PRIVATE)
+    }
+
+    fun login(uname: String, pass: String): Boolean {
+
+        if (uname.isNotEmpty() && pass.isNotEmpty()) {
+            val rPrefDua = sharedPref.edit()
+            rPrefDua.putString("userName", uname)
+            rPrefDua.apply()
+            firebaseAuth.signInWithEmailAndPassword(uname, pass).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                }
+            }
+            return true
+        } else {
+            Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+        }
+        return false
     }
 
     private fun signInGoogle() {

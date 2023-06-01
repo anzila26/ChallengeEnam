@@ -16,7 +16,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
     "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
-    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate"
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "DEPRECATION"
 )
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

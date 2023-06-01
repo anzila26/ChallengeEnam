@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChallengeEnam</string>
+    <string name="app_name">List Film App</string>
     <string name="judul_film">Judul Film</string>
     <string name="rated_movie">Rated Movie</string>
     <string name="tanggal_release">Tanggal Release</string>

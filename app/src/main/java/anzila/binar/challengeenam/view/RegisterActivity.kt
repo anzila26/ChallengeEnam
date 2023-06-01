@@ -33,6 +33,7 @@ class RegisterActivity : AppCompatActivity() {
             val rePass = binding.etRepass.text.toString()
             val rPref = sharedPref.edit()
             rPref.putString("nama", nama)
+            rPref.putString("uname", uname)
             rPref.apply()
 
             if (uname.isNotEmpty() && pass.isNotEmpty() && rePass.isNotEmpty()) {

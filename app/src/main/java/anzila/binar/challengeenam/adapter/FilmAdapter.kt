@@ -28,21 +28,14 @@ class FilmAdapter(private var listFilm : List<ResponseFilmItem>): RecyclerView.A
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.nameFilm.text = listFilm[position].movieName
-        holder.binding.dateFilm.text = listFilm[position].createdAt
+        holder.binding.dateFilm.text = listFilm[position].release
         Glide.with(holder.itemView).load(listFilm[position].image).into(holder.binding.imgFilm)
         holder.binding.detailFilm.setOnClickListener {
             onClick?.invoke(listFilm[position])
         }
-        // }
     }
 
     override fun getItemCount(): Int {
-        if (listFilm == null){
-            return 0
-        }
-        else{
-            return listFilm.size!!
-        }
-        //return listFilm!!.size
+        return listFilm.size
     }
 }
