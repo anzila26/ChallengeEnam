@@ -8,9 +8,11 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity
 data class FavoriteData(
-    @PrimaryKey(autoGenerate = true)
-    var id: Int,
+    @PrimaryKey
+    var id: String,
     var image: String,
     var movieName: String,
-    var release: String
+    var release: String,
+    var rate: String,
+    var synopsis: String
 ) : Parcelable

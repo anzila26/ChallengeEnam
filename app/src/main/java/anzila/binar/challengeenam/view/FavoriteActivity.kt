@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import anzila.binar.challengeenam.adapter.FavoriteAdapter
 import anzila.binar.challengeenam.databinding.ActivityFavoriteBinding
+import anzila.binar.challengeenam.model.ResponseFilmItem
 import anzila.binar.challengeenam.room.FavoriteData
 import anzila.binar.challengeenam.room.FavoriteDatabase
 import anzila.binar.challengeenam.viewmodel.FavoriteViewModel
@@ -35,7 +36,16 @@ class FavoriteActivity : AppCompatActivity() {
             adapter = favoriteAdapter
             favoriteAdapter.onClick={ favoriteData ->
                 val inten = Intent(context, DetailActivity::class.java)
-                inten.putExtra("favoriteData", favoriteData)
+                val film = ResponseFilmItem(
+                    null,
+                    favoriteData.id,
+                    favoriteData.image,
+                    favoriteData.movieName,
+                    favoriteData.rate,
+                    favoriteData.release,
+                    favoriteData.synopsis
+                )
+                inten.putExtra("detailfilm", film)
                 startActivity(inten)
             }
         }
@@ -45,5 +55,5 @@ class FavoriteActivity : AppCompatActivity() {
         })
 
         favoriteViewModel.getAllFavorite()
-   }
+    }
 }

@@ -54,10 +54,11 @@ class DetailActivity : AppCompatActivity() {
             lifecycleScope.launchWhenStarted {
                 var title = binding.titleDet.text.toString()
                 var release = binding.releaseDet.text.toString()
-                var image = detailFilm?.image ?: ""
-//                favoriteDatabase?.favoriteDatabaseDao()?.insertData(FavoriteData(0, title, release, image))
-//                Toast.makeText(this@DetailActivity, "film berhasil di favoritkan", Toast.LENGTH_SHORT).show()
-                val favoriteData = FavoriteData(0, image, title, release)
+                var image = detailFilm?.image
+                var rate = binding.ratedDet.text.toString()
+                var synopsis = binding.synopDet.text.toString()
+                var id = detailFilm?.id
+                val favoriteData = FavoriteData(id!!, image!!, title, release, rate, synopsis)
                 val isFavorite = favoriteViewModel.isFavorite(favoriteData)
 
                 if (isFavorite) {
